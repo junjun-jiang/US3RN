@@ -2,7 +2,7 @@
 The code is for the work:
 
 ```
-@article{ma2021,
+@article{ma2021deep,
   title={Deep Unfolding Network for Spatiospectral Image Super-Resolution},
   author={Qing Ma, Junjun Jiang, Xianming Liu, and Jiayi Ma},
   journal={submitted to IEEE Transactions on Computational Imaging},
