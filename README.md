@@ -12,3 +12,33 @@ The code is for the work:
   year={2021},
 }
 ```
+
+
+
+## Requirements
+
+``` python
+pytorch == 1.6.1
+
+```
+
+### Dataset
+
+To train and test on CAVE data set, you must first download the CAVE data set form http://www.cs.columbia.edu/CAVE/databases/multispectral/. Put all the training images and test images in their respective folders. You can also download the processed data from  
+
+## Train
+
+```python
+python train.py
+```
+
+
+
+## Test
+
+```python
+python test.py
+```
+
+
+
