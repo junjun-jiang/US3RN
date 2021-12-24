@@ -20,21 +20,20 @@ def input_transform():
 
 
 
-def get_patch_training_set(dataset_opt, model_opt):
-    root_dir = dataset_opt['dataroot']
+def get_patch_training_set(upscale_factor, patch_size):
+    root_dir = "/data/mq/data/CAVEdata/"
+    train_dir1 = join(root_dir, "train/X")
+    train_dir2 = join(root_dir, "train/Y")
 
-    train_dir1 = join(root_dir, dataset_opt['train_dir1'])
-    train_dir2 = join(root_dir, dataset_opt['train_dir2'])
-
-    return DatasetFromFolder(train_dir1,train_dir2,model_opt['upscale_factor'], dataset_opt['patch_size'], input_transform=input_transform())
+    return DatasetFromFolder(train_dir1,train_dir2,upscale_factor, patch_size, input_transform=input_transform())
 
 
-def get_test_set(dataset_opt,model_opt):
-    root_dir = dataset_opt['dataroot']
-    test_dir1 = join(root_dir, dataset_opt['val_dir1'])
-    test_dir2 = join(root_dir, dataset_opt['val_dir1'])
+def get_test_set(upscale_factor):
+    root_dir = "/data/mq/data/CAVEdata/"
+    test_dir1 = join(root_dir, "test/X")
+    test_dir2 = join(root_dir, "test/Y")
 
-    return DatasetFromFolder2(test_dir1,test_dir2, model_opt['upscale_factor'], input_transform=input_transform())
+    return DatasetFromFolder2(test_dir1,test_dir2, upscale_factor, input_transform=input_transform())
 
 
 if __name__ == '__main__':

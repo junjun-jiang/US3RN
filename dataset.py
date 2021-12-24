@@ -26,17 +26,6 @@ def load_img1(filepath):
     x = torch.tensor(x).float()
     return x
 
-def load_img2(filepath):
-    x = sio.loadmat(filepath)
-    x = x['msi']
-    x = torch.tensor(x).float()
-    return x
-
-def load_img3(filepath):
-    x = sio.loadmat(filepath)
-    x = x['RGB']
-    x = torch.tensor(x).float()
-    return x
 
 
 class DatasetFromFolder(data.Dataset):
@@ -117,13 +106,13 @@ class DatasetFromFolder2(data.Dataset):
         self.xs = []
         self.xs_name = []
         for img in self.image_filenames1:
-            self.xs.append(load_img2(img))
+            self.xs.append(load_img(img))
             self.xs_name.append(img)
 
 
         self.ys = []
         for img in self.image_filenames2:
-            self.ys.append(load_img3(img))
+            self.ys.append(load_img1(img))
 
     def __getitem__(self, index):
         X = self.xs[index]

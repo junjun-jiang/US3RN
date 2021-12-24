@@ -47,4 +47,4 @@ class resblock(nn.Module):
     def forward(self,x):
         res = self.body(x)
         x = res + x
-        return x
+        return self.relu(x)
