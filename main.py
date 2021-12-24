@@ -178,7 +178,7 @@ def checkpoint(epoch):
         print("Checkpoint saved to {}".format(model_out_path))
 
 if opt.mode == 'train':
-    for epoch in range(opt.nEpochs + 1, 201):
+    for epoch in range(opt.nEpochs + 1, 161):
         avg_loss = train(epoch, optimizer, scheduler)
         checkpoint(epoch)
 
